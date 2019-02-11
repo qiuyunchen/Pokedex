@@ -26,10 +26,8 @@ class App extends Component {
 
       <List/>
 
-      <footer>
-        <Load/>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-        </footer>
+      <Load/>
+        
 
       </div>
     );

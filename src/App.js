@@ -12,9 +12,12 @@ class App extends Component {
 
     this.state = {
       list: [],
+      isLoaded: false,
       
     }
   }
+
+
   render() {
     return (
       <div className="container pokedex">
@@ -23,7 +26,10 @@ class App extends Component {
 
       <List/>
 
-      <Load/>
+      <footer>
+        <Load/>
+        <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+        </footer>
 
       </div>
     );

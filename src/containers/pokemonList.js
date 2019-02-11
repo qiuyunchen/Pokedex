@@ -1,5 +1,6 @@
 import React from 'react';
 import Pokemon from '../components/pokemon';
+import './pokemonList.css'
 
 const List = (props) => {
     return (
@@ -7,10 +8,12 @@ const List = (props) => {
         <h2>POKEMON CONTAINER</h2>
         <div className='pkmn-list'>
             {
-                props.list.map((e, i) =>{
-                    console.log(e.img)
+                props.list.map((e, i) => {
+                    console.log(i)
                     return (
-                        <Pokemon name={e.name} key={i}/>
+                        <div className="pkmn" key={i} style={{color:'blue', padding:'10px'}}>
+                        <Pokemon name={e.name} index={i} />
+                        </div>
                     )
                 })
             }

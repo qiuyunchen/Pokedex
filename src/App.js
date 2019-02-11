@@ -13,7 +13,7 @@ class App extends Component {
 
     this.state = {
       list: [
-        {name: "bulbasaur", info: "https://pokeapi.co/api/v2/pokemon/1/"},
+        {name: "bulbasaur", info: "https://pokeapi.co/api/v2/pokemon/1/"}, // info holds pkmns move and abilities
         {name: "ivysaur", info: "https://pokeapi.co/api/v2/pokemon/2/"},
         {name: "venusaur", info: "https://pokeapi.co/api/v2/pokemon/3/"},
         {name: "charmander", info: "https://pokeapi.co/api/v2/pokemon/4/"},

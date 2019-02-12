@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Load = ()=> {
+const Load = (props)=> {
     return (
-        <div> Load Button </div>
+        <button onClick={props.load}>LOAD</button>
     )
 }
 

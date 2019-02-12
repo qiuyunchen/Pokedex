@@ -9,7 +9,7 @@ const List = (props) => {
         <div className='pkmn-list'>
             {
                 props.list.map((e, i) => {
-                    console.log(i)
+                    // console.log(i)
                     return (
                         <div className="pkmn" key={i} style={{color:'blue', padding:'10px'}}>
                         <Pokemon name={e.name} index={i} />
@@ -17,7 +17,6 @@ const List = (props) => {
                     )
                 })
             }
-
         </div>
         </div>
     )

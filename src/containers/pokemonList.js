@@ -11,7 +11,7 @@ const List = (props) => {
                     props.list.map((e, i) => {
                         return (
                             <div className="pkmn" key={i}>
-                                <Pokemon name={e.name} index={i} click={props.click}/>
+                                <Pokemon name={e.name} url={e.url} index={i} click={props.click}/>
                             </div>
                         )
                     })

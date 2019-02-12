@@ -1,7 +1,10 @@
-import React from 'react';
+
+import React, {Component} from 'react';
+import './search.css'
 
 const Search = () => {
-    return <h1>Search Bar</h1>
+    return <input className='search_bar' type='text' placeholder='Search...'></input>;
 };
 
 export default Search;
+

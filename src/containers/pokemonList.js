@@ -4,6 +4,7 @@ import './pokemonList.css'
 
 const List = (props) => {
     return (
+
         <div className='pkmn-container'>
             <div className='pkmn-list'>
                 {
@@ -16,6 +17,7 @@ const List = (props) => {
                     })
                 }
             </div>
+
         </div>
     )
 };

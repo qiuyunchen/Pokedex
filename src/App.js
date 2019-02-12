@@ -5,6 +5,7 @@ import List from './containers/pokemonList';
 import Profile from './containers/pokemonProfile';
 import Header from './components/header';
 import Axios from 'axios';
+import SearchList from './components/searchList';
 
 
 class App extends Component {
@@ -38,10 +39,25 @@ class App extends Component {
     offset: 20,
     clickedPokemon: false,
     pokemonClicked : null,
-    pokemonClickedUrl: null
+    pokemonClickedUrl: null,
+    dropdownList: [],
     }
   }
-
+  
+  filterDropdown = (e) => {
+    const searchStr = e.target.value.trim().toLowerCase();
+    const l = searchStr.length;
+    const newList = SearchList.filter(n => n.toLowerCase().slice(0, l) === searchStr);
+    this.setState({dropdownList: newList});
+  }
+  removeDropdown = (e) =>{
+    this.setState({dropdownList: []});
+  }
+  clickPkmn = (e) =>{
+    this.setState({pokemonClicked: e.target.innerText}, ()=>{
+      console.log(this.state.pokemonClicked, 'was clicked!');
+    });
+  }
   loadMore = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.offset}&limit=20`)
     .then((data) => {
@@ -69,11 +85,12 @@ class App extends Component {
   }
  
   render() {
-    
+    const {dropdownList} = this.state;
     return (
       <>
 
-        <Header />
+      <Header filterDropdown={this.filterDropdown} dropdownList={dropdownList} clickHeader={this.removeDropdown} clickPkmn={this.clickPkmn} />
+
         {
           this.state.clickedPokemon ?
             <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl}/>

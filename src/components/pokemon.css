@@ -1,0 +1,7 @@
+.pkmn-row {
+    display: flex;
+    justify-content: space-between;
+}
+.mini-pkmn-img {
+    margin-right: 50px;
+}

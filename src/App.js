@@ -80,11 +80,13 @@ class App extends Component {
 
         <div className="container pokedex">
           
-          <List/>
+          <List list={this.state.list}/>
 
-          <Load/>
+          <Load load={this.loadMore}/>
 
+          </div>
 
+          </>
     );
   }
 }

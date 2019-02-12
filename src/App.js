@@ -37,24 +37,30 @@ class App extends Component {
         {name: "pidgeot", info: "https://pokeapi.co/api/v2/pokemon/18/"},
         {name: "rattata", info: "https://pokeapi.co/api/v2/pokemon/19/"},
         {name: "raticate", info: "https://pokeapi.co/api/v2/pokemon/20/"},
-    ]
+    ],
+    offset: 20
     }
   }
 
-
+  loadMore = () => {
+    Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.offset}&limit=20`)
+    .then((data) => {
+      let arr = []
+      for(let i = 0; i < data.data.results.length; i++) {
+        arr.push(data.data.results[i]);
+      }
+      return arr;
+    })
+    .then((arr) => { 
+      this.setState({offset: this.state.offset + 20, list: this.state.list.concat(arr)})
+      console.log(this.state.list);
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
  
   render() {
-
-    // Axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20')
-    // .then((data) => {
-    //   console.log(data.data.results)
-    //   for(let i = 0; i < data.data.results.length; i++) {
-    //     console.log(data.data.results[i])
-    //   }
-    // })
-    // .catch(err => {
-    //   console.log(err)
-    // })
     
     return (
 
@@ -78,8 +84,6 @@ class App extends Component {
 
           <Load/>
 
-        </div>
-      </>
 
     );
   }

@@ -8,11 +8,11 @@ import Moves from '../components/profileComponents/moves';
 const Profile = (props) => {
     return (
         <>
-        <Home/>
-        <Images/>
-        <Type/>
-        <Stats/>
-        <Moves/>
+        <Home name={props.name}/>
+        <Images name={props.name}/>
+        <Type name={props.name}/>
+        <Stats name={props.name}/>
+        <Moves name={props.name}/>
         </>
     )
 }

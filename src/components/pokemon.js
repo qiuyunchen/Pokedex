@@ -9,10 +9,10 @@ const padNum = (num) => {
 const Pokemon = (props) => {
     let num = props.index + 1;
     return (
-        <div onClick={props.click} className="pkmn-row">
-            <div><img src={`https://img.pokemondb.net/sprites/sun-moon/icon/${props.name}.png`} alt={'idk'} /></div>
-            <div>{props.name}</div>
-            <div># {padNum(num)}</div>
+        <div onClick={props.click} className="pkmn-row" value={props.name}>
+            <div value={props.name}><img value={props.name} src={`https://img.pokemondb.net/sprites/sun-moon/icon/${props.name}.png`} alt={'idk'} /></div>
+            <div value={props.name}>{props.name}</div>
+            <div value={props.name}># {padNum(num)}</div>
         </div>
     )
 }

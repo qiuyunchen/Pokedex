@@ -51,8 +51,9 @@ class App extends Component {
       return arr;
     })
     .then((arr) => { 
-      this.setState({offset: this.state.offset + 20, list: this.state.list.concat(arr)})
-      console.log(this.state.list);
+      this.setState({offset: this.state.offset + 20, list: this.state.list.concat(arr)}, () => {
+        console.log(this.state);
+      })
     })
     .catch(err => {
       console.log(err)
@@ -60,11 +61,9 @@ class App extends Component {
   }
 
   checkPokemon = (e) => {
-    // invoked when clicked on pokemon
-    //changes state from false to true for clickedPokemon
-    // takes pokemon name from target, stores it in state.pokemonClicked
-    // setState({clickedPokemon: true, pokemonClicked: e.target.name})
-    console.log('clicked on pokemon')
+    this.setState({clickedPokemon: false, pokemonClicked: e.target.getAttribute('value')}, ()=> {
+      console.log(this.state)
+    })
   }
  
   render() {

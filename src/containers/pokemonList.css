@@ -3,5 +3,7 @@
 }
 
 .pkmn {
-    border: 1px solid red;
+    border: 1px solid grey;
+    border-radius: 9px;
+    margin-bottom: 8px;
 }

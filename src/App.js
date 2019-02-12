@@ -40,7 +40,8 @@ class App extends Component {
         {name: "raticate", info: "https://pokeapi.co/api/v2/pokemon/20/"},
     ],
     offset: 20,
-    clickedPokemon: true
+    clickedPokemon: true,
+    pokemonClicked : null
     }
   }
 
@@ -62,8 +63,11 @@ class App extends Component {
     })
   }
 
-  checkPokemon = () => {
-    
+  checkPokemon = (e) => {
+    // invoked when clicked on pokemon
+    //changes state from false to true for clickedPokemon
+    // takes pokemon name from target, stores it in state.pokemonClicked
+    // setState({clickedPokemon: true, pokemonClicked: e.target.name})
   }
  
   render() {
@@ -85,7 +89,7 @@ class App extends Component {
 
         {
           this.state.clickedPokemon ? 
-          <Profile /> 
+          <Profile name={this.state.pokemonClicked}/> 
           : 
           <div className="container pokedex">
           <List list={this.state.list}/>

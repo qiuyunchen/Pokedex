@@ -4,7 +4,7 @@ import './header.css';
 
 const Header = (props) =>{
     return (
-    <header className='header'>
+    <header className='header' onClick={e => props.clickHeader(e)}>
         <div>
             <img className='pokeball' src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball' />
         </div>

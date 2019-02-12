@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Load from './components/load';
 import List from './containers/pokemonList';
+
 import Search from './components/search';
 import Profile from './containers/pokemonProfile';
 
 import './App.css';
 
+import Header from './components/header';
 import Axios from 'axios';
-
 
 
 class App extends Component {
@@ -74,29 +75,14 @@ class App extends Component {
     
     return (
       <>
-        <header className='header'>
-          <div>
-            <img className='pokeball' src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball'/>
-          </div>
-          <div>
-            <h1>Pursuit Pokedex</h1>
-            <Search />
-          </div>
-          <div>
-            <img className='pokeball' src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball'/>
-          </div>
-        </header>
 
-        {
-          this.state.clickedPokemon ? 
-          <Profile name={this.state.pokemonClicked}/> 
-          : 
-          <div className="container pokedex">
-          <List list={this.state.list}/>
-          <Load load={this.loadMore}/>
-          </div>
-        }
-          </>
+        <Header />
+        <div className="container pokedex">
+          <List list={this.state.list} />
+          <Load load={this.loadMore} />
+        </div>
+      </>
+
     );
   }
 }

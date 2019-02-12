@@ -53,6 +53,11 @@ class App extends Component {
   removeDropdown = (e) =>{
     this.setState({dropdownList: []});
   }
+  clickPkmn = (e) =>{
+    this.setState({pokemonClicked: e.target.innerText}, ()=>{
+      console.log(this.state.pokemonClicked, 'was clicked!');
+    });
+  }
   loadMore = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.offset}&limit=20`)
     .then((data) => {
@@ -84,7 +89,7 @@ class App extends Component {
     return (
       <>
 
-      <Header filterDropdown={this.filterDropdown} dropdownList={dropdownList} clickHeader={this.removeDropdown} />
+      <Header filterDropdown={this.filterDropdown} dropdownList={dropdownList} clickHeader={this.removeDropdown} clickPkmn={this.clickPkmn} />
 
         {
           this.state.clickedPokemon ?

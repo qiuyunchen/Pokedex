@@ -10,7 +10,7 @@ const Header = (props) =>{
         </div>
         <div>
             <h1>Pursuit Pokedex</h1>
-            <Search filterDropdown={props.filterDropdown} dropdownList={props.dropdownList}/>
+            <Search filterDropdown={props.filterDropdown} dropdownList={props.dropdownList} clickPkmn={props.clickPkmn}/>
         </div>
         <div>
             <img className='pokeball' src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball' />

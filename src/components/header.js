@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Search from './search';
 import './header.css';
 
-const Header = () =>{
+const Header = (props) =>{
     return (
     <header className='header'>
         <div>
@@ -10,7 +10,7 @@ const Header = () =>{
         </div>
         <div>
             <h1>Pursuit Pokedex</h1>
-            <Search />
+            <Search filterDropdown={props.filterDropdown} dropdownList={props.dropdownList}/>
         </div>
         <div>
             <img className='pokeball' src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball' />

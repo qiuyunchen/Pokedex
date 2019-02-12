@@ -5,6 +5,7 @@ import List from './containers/pokemonList';
 import Profile from './containers/pokemonProfile';
 import Header from './components/header';
 import Axios from 'axios';
+import SearchList from './components/searchList';
 
 
 class App extends Component {
@@ -38,8 +39,16 @@ class App extends Component {
     offset: 20,
     clickedPokemon: false,
     pokemonClicked : null,
-    pokemonClickedUrl: null
+    pokemonClickedUrl: null,
+    dropdownList: [],
     }
+  }
+  
+  filterDropdown = (e) => {
+    const searchStr = e.target.value.trim().toLowerCase();
+    const l = searchStr.length;
+    const newList = SearchList.filter(n => n.toLowerCase().slice(0, l) === searchStr);
+    this.setState({dropdownList: newList});
   }
 
   loadMore = () => {
@@ -73,7 +82,8 @@ class App extends Component {
     return (
       <>
 
-        <Header />
+        <Header filterDropdown={this.filterDropdown} dropdownList={this.state.dropdownList}/>
+
         {
           this.state.clickedPokemon ?
             <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl}/>

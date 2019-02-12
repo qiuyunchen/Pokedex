@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Load from './components/load';
 import List from './containers/pokemonList';
+
+import Search from './components/search';
+import Profile from './containers/pokemonProfile';
+
+import './App.css';
+
 import Header from './components/header';
 import Axios from 'axios';
 
@@ -34,7 +40,9 @@ class App extends Component {
         {name: "rattata", info: "https://pokeapi.co/api/v2/pokemon/19/"},
         {name: "raticate", info: "https://pokeapi.co/api/v2/pokemon/20/"},
     ],
-    offset: 20
+    offset: 20,
+    clickedPokemon: true,
+    pokemonClicked : null
     }
   }
 
@@ -55,18 +63,26 @@ class App extends Component {
       console.log(err)
     })
   }
+
+  checkPokemon = (e) => {
+    // invoked when clicked on pokemon
+    //changes state from false to true for clickedPokemon
+    // takes pokemon name from target, stores it in state.pokemonClicked
+    // setState({clickedPokemon: true, pokemonClicked: e.target.name})
+  }
  
   render() {
     
     return (
-
       <>
+
         <Header />
         <div className="container pokedex">
           <List list={this.state.list} />
           <Load load={this.loadMore} />
         </div>
       </>
+
     );
   }
 }

@@ -4,8 +4,11 @@ import Images from '../components/profileComponents/images';
 import Type from '../components/profileComponents/type';
 import Stats from '../components/profileComponents/stats';
 import Moves from '../components/profileComponents/moves';
+import Axios from 'axios';
 
 const Profile = (props) => {
+
+
     return (
         <>
         <Home name={props.name}/>

@@ -73,13 +73,13 @@ class App extends Component {
 
         <Header />
         {
-         this.state.clickedPokemon ?
-         <Profile name={this.state.pokemonClicked}/>
-         :
-         <div className="container pokedex">
-         <List list={this.state.list} click={this.checkPokemon}/>
-         <Load load={this.loadMore}/>
-         </div>
+          this.state.clickedPokemon ?
+            <Profile name={this.state.pokemonClicked} />
+            :
+            <div className="container pokedex">
+              <List list={this.state.list} click={this.checkPokemon} />
+              <Load load={this.loadMore} />
+            </div>
        }
 
       </>

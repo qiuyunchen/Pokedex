@@ -2,19 +2,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 150px 60px;
-    border-top: 50px solid #E10006;
+    padding: 25px 30px 40px;
+    border-top: 40px solid #E10006;
     border-bottom: 2px solid lightgrey;
+    margin-bottom: 30px;
 }
 
 h1 {
     color: #B9152D;
     font-weight: 800;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 50pt;
+    font-size: 30pt;
 }
 
 .pokeball {
-    width: 250px;
+    width: 125px;
 }

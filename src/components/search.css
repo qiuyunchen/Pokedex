@@ -4,7 +4,6 @@
     border: 2px solid #D6D6D6;
     border-radius: 12px;
     font-size: 20px;
-    letter-spacing: 3px;
     padding-left: 20px;
     margin-top: 15px;
 }
@@ -14,16 +13,30 @@
 .search_bar:focus {
     outline: none;
 }
+.override_prop {
+    border-radius: 12px 12px 0px 0px;
+}
 .dropdown_box {
     position: absolute;
-    width: 389px;
-    max-height: 250px;
+    width: 388px;
+    max-height: 300px;
     color: #ADADAD;
     border: 2px solid #D6D6D6;
+    border-top: none;
     background-color: #F8F8F8;
     z-index: 99;
     overflow: scroll;
 }
 .hidden{
     display: none;
+}
+.matching_pkmn {
+    display: block;
+    padding: 3px;
+    padding-left: 20px;
+}
+.matching_pkmn:hover {
+    background-color: #D6D6D6;
+    color: grey;
+    cursor: pointer;
 }

@@ -64,6 +64,7 @@ class App extends Component {
     //changes state from false to true for clickedPokemon
     // takes pokemon name from target, stores it in state.pokemonClicked
     // setState({clickedPokemon: true, pokemonClicked: e.target.name})
+    console.log('clicked on pokemon')
   }
  
   render() {
@@ -77,7 +78,7 @@ class App extends Component {
          <Profile name={this.state.pokemonClicked}/>
          :
          <div className="container pokedex">
-         <List list={this.state.list}/>
+         <List list={this.state.list} click={this.checkPokemon}/>
          <Load load={this.loadMore}/>
          </div>
        }

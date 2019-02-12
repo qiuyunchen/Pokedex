@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Load from './components/load';
 import List from './components/pokemonList';
 import Search from './components/search';
+import './App.css';
 
 
 class App extends Component {
@@ -17,15 +18,28 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="container pokedex">
-      
-      <header><Search/></header>
+      <>
+        <header className='header'>
+          <div>
+            <img className='pokeball' src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball'/>
+          </div>
+          <div>
+            <h1>Pursuit Pokedex</h1>
+            <Search />
+          </div>
+          <div>
+            <img className='pokeball' src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball'/>
+          </div>
+        </header>
 
-      <List/>
+        <div className="container pokedex">
+          
+          <List/>
 
-      <Load/>
+          <Load/>
 
-      </div>
+        </div>
+      </>
     );
   }
 }

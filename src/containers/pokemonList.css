@@ -1,9 +1,10 @@
-* {
-    box-sizing: border-box;
-}
-
 .pkmn {
+    color: blue;
+    padding: 10px;
     border: 1px solid grey;
     border-radius: 9px;
     margin-bottom: 8px;
+}
+.pkmn-container {
+    min-width: 300px;
 }

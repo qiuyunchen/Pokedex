@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Load from './components/load';
 import List from './containers/pokemonList';
 import Search from './components/search';
+import Profile from './containers/pokemonProfile';
 
 import './App.css';
 
@@ -38,7 +39,8 @@ class App extends Component {
         {name: "rattata", info: "https://pokeapi.co/api/v2/pokemon/19/"},
         {name: "raticate", info: "https://pokeapi.co/api/v2/pokemon/20/"},
     ],
-    offset: 20
+    offset: 20,
+    clickedPokemon: true
     }
   }
 
@@ -59,11 +61,14 @@ class App extends Component {
       console.log(err)
     })
   }
+
+  checkPokemon = () => {
+    
+  }
  
   render() {
     
     return (
-
       <>
         <header className='header'>
           <div>
@@ -78,14 +83,15 @@ class App extends Component {
           </div>
         </header>
 
-        <div className="container pokedex">
-          
+        {
+          this.state.clickedPokemon ? 
+          <Profile /> 
+          : 
+          <div className="container pokedex">
           <List list={this.state.list}/>
-
           <Load load={this.loadMore}/>
-
           </div>
-
+        }
           </>
     );
   }

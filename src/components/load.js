@@ -2,7 +2,7 @@ import React from 'react';
 
 const Load = (props)=> {
     return (
-        <button onClick={props.load}>LOAD</button>
+        <button type="button" onClick={props.load} class="btn btn-block btn-danger">Load More Pokémon</button>
     )
 }
 

@@ -1,14 +1,28 @@
 import React from 'react';
-import Axios from 'axios';
+import './images.css';
 
 const Images = (props) => {
-    const name = props.name;
-    const url = props.url;
-    
+    const {name, data} = props;
+    if (!data) return null;  
+
+    const urlKeys = ['front_default','front_shiny','back_default','back_shiny'];
+    const imgUrl = `https://img.pokemondb.net/artwork/${name}.jpg`;
+
     return (
-        <div>IMAGES OF POKEMON</div>
-    )
-    
+        <div className='img_row'>
+            <div className='lg_img'>
+                <img src={imgUrl} alt='pkmn_img' />
+            </div>
+            <div className='mini_img_box'>
+                <div className='mini_imgs'>
+                    {urlKeys.map((k, i) => <img className='mini_img' src={data.sprites[k]} alt='icon' key={i} />)}
+                </div>
+                <div className='text'>
+                    Default
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default Images;

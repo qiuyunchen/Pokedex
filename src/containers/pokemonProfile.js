@@ -21,10 +21,9 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        console.log(this.state);
         Axios.get(this.state.url)
             .then((data) => {
-                this.setState({pokeData: data.data}, () => console.log(this.state.pokeData));
+                this.setState({pokeData: data.data});
             })
             .catch(err => {
                 console.log(err);

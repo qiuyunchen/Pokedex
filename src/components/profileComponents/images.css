@@ -1,0 +1,19 @@
+.img_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lg_img {
+    padding: 20px;
+}
+.mini_img_box {
+    width: 70%;
+}
+.mini_imgs {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+.text {
+    text-align: center;
+}

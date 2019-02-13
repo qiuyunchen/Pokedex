@@ -26,13 +26,13 @@ const Type = (props) => {
     <>
     {
         !type2 ? 
-        <div>
+        <div className='type_box'>
             <span className={type1}>{type1}</span> 
         </div>
         :
-        <div>
-            <span className={type1}> {type1} </span>
-            <span className={type2}>{type2}</span>
+        <div className='type_box'>
+            <div id='m' className={type1}> {type1} </div>
+            <div id='n' className={type2}>{type2}</div>
         </div>
     }  
 </>

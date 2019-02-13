@@ -5,6 +5,10 @@
 }
 .lg_img {
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .mini_img_box {
     width: 70%;

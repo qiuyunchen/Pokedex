@@ -1,5 +1,5 @@
 import React from 'react';
-import Pokemon from '../components/pokemon';
+import Pokemon from '../components/homeComponents/pokemon';
 import './pokemonList.css'
 
 const List = (props) => {

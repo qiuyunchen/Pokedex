@@ -21,3 +21,8 @@
 .text {
     text-align: center;
 }
+
+.home:hover {
+    cursor: pointer;
+    color: blue;
+}

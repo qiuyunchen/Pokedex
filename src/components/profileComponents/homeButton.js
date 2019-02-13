@@ -6,7 +6,7 @@ const Home = (props) => {
 
     return (
         <div>
-            <span onClick={home}>Home  >>  </span>
+            <span className='home' onClick={home}>Home  >>  </span>
             <span className='pkmn-name'>{name}</span>
         </div>
     )

@@ -1,5 +1,6 @@
 import React from 'react';
 import './images.css';
+import Type from './type';
 
 const Images = (props) => {
     const {name, data} = props;
@@ -12,6 +13,7 @@ const Images = (props) => {
         <div className='img_row'>
             <div className='lg_img'>
                 <img src={imgUrl} alt='pkmn_img' />
+                <Type name={name} data={data} />
             </div>
             <div className='mini_img_box'>
                 <div className='mini_imgs'>

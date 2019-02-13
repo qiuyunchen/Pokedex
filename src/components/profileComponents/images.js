@@ -11,8 +11,8 @@ const Images = (props) => {
 
     return (
         <div className='img_row'>
-            <div className='lg_img'>
-                <img src={imgUrl} alt='pkmn_img' />
+            <div className='lg_img_box'>
+                <img className='lg_img' src={imgUrl} alt='pkmn_img' />
                 <Type name={name} data={data} />
             </div>
             <div className='mini_img_box'>

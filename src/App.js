@@ -25,8 +25,7 @@ class App extends Component {
   
   filterDropdown = (e) => {
     const searchStr = e.target.value.trim().toLowerCase();
-    const l = searchStr.length;
-    const newList = SearchList.filter(n => n.toLowerCase().slice(0, l) === searchStr);
+    const newList = SearchList.filter(n => n.toLowerCase().includes(searchStr));
     this.setState({dropdownList: newList});
   }
   removeDropdown = (e) =>{

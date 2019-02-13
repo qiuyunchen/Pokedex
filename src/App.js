@@ -43,7 +43,7 @@ class App extends Component {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.offset}&limit=20`)
     .then((data) => {
       let arr = []
-      for(let i = 0; i < data.data.results.length; i++) {
+      for (let i = 0; i < data.data.results.length; i++) {
         arr.push(data.data.results[i]);
       }
       return arr;
@@ -64,6 +64,10 @@ class App extends Component {
     })
   }
 
+  backHome = () => {
+    this.setState({clickedPokemon: false});
+  }
+
   componentDidMount() {
     this.loadMore();
   }
@@ -72,21 +76,17 @@ class App extends Component {
     const {dropdownList} = this.state;
     return (
       <>
-
       <Header filterDropdown={this.filterDropdown} dropdownList={dropdownList} clickHeader={this.removeDropdown} clickPkmn={this.clickPkmn} />
-
         {
           this.state.clickedPokemon ?
-            <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl}/>
+            <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl} home={this.backHome}/>
             :
             <div className="container pokedex">
               <List list={this.state.list} click={this.checkPokemon} />
               <Load load={this.loadMore} />
             </div>
        }
-
       </>
-
     );
   }
 }

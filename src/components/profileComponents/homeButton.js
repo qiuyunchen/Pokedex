@@ -1,8 +1,14 @@
 import React from 'react';
+import './homeButton.css'
 
 const Home = (props) => {
+    const {name, home} = props;
+
     return (
-        <div>HOME BUTTON</div>
+        <div>
+            <span onClick={home}>Home  >>  </span>
+            <span className='pkmn-name'>{name}</span>
+        </div>
     )
 }
 

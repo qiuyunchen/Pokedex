@@ -1,13 +1,9 @@
-import React from 'react';
 import Home from '../components/profileComponents/homeButton';
 import Images from '../components/profileComponents/images';
-
 import Stats from '../components/profileComponents/stats';
 import Moves from '../components/profileComponents/moves';
 import Axios from 'axios';
-import react, {Component} from 'react';
-
-
+import React, {Component} from 'react';
 
 class Profile extends Component {
     constructor(props) {
@@ -16,7 +12,8 @@ class Profile extends Component {
         this.state = {
             name: props.name,
             url: props.url,
-            pokeData: null
+            pokeData: null,
+            home: props.home
             }
     }
 
@@ -32,7 +29,7 @@ class Profile extends Component {
 
     render() {
         return <>
-            <Home name={this.state.name} data={this.state.pokeData} /> 
+            <Home name={this.state.name} data={this.state.pokeData} home={this.state.home}/> 
             <Images name={this.state.name} data={this.state.pokeData} />
             
             <Stats name={this.state.name} data={this.state.pokeData} />

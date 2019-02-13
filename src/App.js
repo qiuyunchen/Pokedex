@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import Load from './components/load';
+import Load from './components/homeComponents/load';
 import List from './containers/pokemonList';
 import Profile from './containers/pokemonProfile';
-import Header from './components/header';
+import Header from './components/homeComponents/header';
 import Axios from 'axios';
-import SearchList from './components/searchList';
+import SearchList from './components/homeComponents/searchList';
 
 
 class App extends Component {

@@ -1,11 +1,28 @@
 import React from 'react';
 
 const Moves = (props) => {
-    const name = props.name;
-    const url = props.url;
+    const {data} = props;
+    if (!data) return null;
+
+    console.log(data)
+    let arr = []
+    for (let i = 0; i < 3; i ++) {
+        arr.push(data.moves[i]);
+    }
+    console.log(arr)
     
     return (
-        <div>POKEMON MOVES</div>
+        <>
+        <div>MOVES</div>
+        {
+            arr.map((e, i) => {
+                // if (i = 3) return;
+                return(
+                    <span key={i}>{e.move.name} </span>
+                )
+            })
+        }
+        </>
     )
 }
 

@@ -59,9 +59,10 @@ class App extends Component {
   }
 
   checkPokemon = (e) => {
-    console.log(e.target.getAttribute('url'))
+    console.log(e.target.getAttribute('url'), e.target.getAttribute('value'))
+    console.log()
     this.setState({clickedPokemon: true, pokemonClicked: e.target.getAttribute('value'), pokemonClickedUrl: e.target.getAttribute('url')}, ()=> {
-      console.log(this.state)
+      // console.log(this.state)
     })
   }
 

@@ -9,9 +9,10 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    width: 30%;
 }
 .lg_img {
-    width: 300px;
+    height: 250px;
 }
 .mini_img_box {
     width: 70%;

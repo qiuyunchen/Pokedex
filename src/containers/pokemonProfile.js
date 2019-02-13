@@ -4,6 +4,7 @@ import Stats from '../components/profileComponents/stats';
 import Moves from '../components/profileComponents/moves';
 import Axios from 'axios';
 import React, {Component} from 'react';
+import './pokemonProfile.css'
 
 class Profile extends Component {
     constructor(props) {
@@ -28,13 +29,13 @@ class Profile extends Component {
     }
 
     render() {
-        return <>
+        return <div className='profile-wrap'>
             <Home name={this.state.name} data={this.state.pokeData} home={this.state.home}/> 
             <Images name={this.state.name} data={this.state.pokeData} />
             
             <Stats name={this.state.name} data={this.state.pokeData} />
             <Moves name={this.state.name} data={this.state.pokeData} />
-        </>
+        </div>
     }
 }
 

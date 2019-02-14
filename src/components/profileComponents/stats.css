@@ -4,3 +4,23 @@
     border: 1px solid lightgray;
     border-radius: 10px;
 }
+.stat {
+    color: grey;
+    font-weight: 500;
+    font-size: 15pt;
+}
+.stat-val {
+    text-align: center;
+    font-size: 18pt;
+    font-weight: 800;
+}
+.stat-title {
+    font-size: 18pt;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+.stat-wrap {
+    max-width: 1100px;
+    margin: auto;
+}

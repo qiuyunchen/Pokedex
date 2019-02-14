@@ -3,12 +3,16 @@
     align-items: center;
     justify-content: space-between;
 }
-.lg_img {
+.lg_img_box {
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    width: 30%;
+}
+.lg_img {
+    height: 250px;
 }
 .mini_img_box {
     width: 70%;
@@ -20,4 +24,13 @@
 }
 .text {
     text-align: center;
+    color: grey;
+}
+.name_row {
+    width: 100%;
+    text-align: right;
+    padding-right: 100px;
+    font-size: 20pt;
+    font-weight: 700;
+    letter-spacing: 5px;
 }

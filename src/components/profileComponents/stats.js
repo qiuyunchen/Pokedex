@@ -11,10 +11,8 @@ const Stats = (props) => {
     console.log(name, data.stats)
 
     return (
-        <>
-            <div>
-                BASE STATS
-            </div>
+        <div className='stat-wrap'>
+            <div className='stat-title'> Base Stats </div>
             <div className='stat-row'>
                 {
                     arr.map((e, i) => {
@@ -27,7 +25,7 @@ const Stats = (props) => {
                     })
                 }
             </div>
-        </>
+        </div>
     )
 }
 

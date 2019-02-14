@@ -34,3 +34,8 @@
     font-weight: 700;
     letter-spacing: 5px;
 }
+
+.home:hover {
+    cursor: pointer;
+    color: blue;
+}

@@ -6,9 +6,11 @@ const Home = (props) => {
     const newName = name[0].toUpperCase() + name.slice(1);
 
     return (
+
         <div className='nav-row'>
             <span className='home-text' onClick={home}> Home  >>  </span>
             <span className='pkmn-name'>{newName}</span>
+
         </div>
     )
 }

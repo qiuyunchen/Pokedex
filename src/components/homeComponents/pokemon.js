@@ -9,6 +9,7 @@ const padNum = (num) => {
 
 const Pokemon = (props) => {
     let num = props.index + 1;
+
     return (
         <div className="pkmn-row" onClick={props.click} value={props.name} url={props.url}>
             <div value={props.name} url={props.url}>

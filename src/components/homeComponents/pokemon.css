@@ -1,6 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
 .pkmn-row {
     display: flex;
     justify-content: space-between;
+}
+
+.pkmn-row:hover {
+    background-color: yellow;
+    cursor: pointer;
 }
 .mini-pkmn-img {
     margin-right: 50px;

@@ -48,6 +48,8 @@ class App extends Component {
       return arr;
     })
     .then((arr) => { 
+      localStorage.setItem('list', JSON.stringify(this.state.list.concat(arr)));
+      localStorage.setItem('offset', this.state.offset + 20);
       this.setState({offset: this.state.offset + 20, list: this.state.list.concat(arr)}, () => {
         console.log(this.state);
       })
@@ -68,7 +70,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.loadMore();
+    if (!localStorage.getItem('list')) this.loadMore();
+    else this.setState({offset: parseInt(localStorage.getItem('offset')), list: JSON.parse(localStorage.getItem('list'))})
   }
  
   render() {

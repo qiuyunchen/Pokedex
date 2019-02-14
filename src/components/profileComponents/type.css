@@ -1,177 +1,84 @@
+.badge {
+    margin-right: 10px;
 
-.fire {
+}
+
+#fire {
     background-color: red;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
 }
 
-.grass {
+#grass {
     background-color: green;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+  
 }
 
-.water {
+#water {
     background-color: blue;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+
 }
 
-.flying {
+#flying {
     background-color: grey;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
 }
 
-.psychic {
+#psychic {
     background-color: purple;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
 }
 
-.electric {
+#electric {
     background-color: yellow;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+
 }
 
-.steel {
+#steel {
     background-color: darkslategrey;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+
 }
 
-.poison {
+#poison {
     background-color: rgb(136, 38, 136);
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
 }
 
 .rock {
     background-color: brown;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
 }
 
-.ground {
+#ground {
     background-color: brown;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+
 }
 
-.fairy {
+#fairy {
     background-color: pink;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+
 }
 
-.dragon {
+#dragon {
     background-color: orangered;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+
 }
 
-.fighting {
+#fighting {
     background-color: lightcoral;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+
 }
 
-.normal {
+#normal {
     background-color: beige;
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: black;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+
 }
-.dark {
+#dark {
     background-color: rgb(31, 3, 31);
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+
 }
 
-.ice {
+#ice {
     background-color: rgb(123, 123, 250);
-    display: inline;
-    padding: .2em .6em .3em;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    vertical-align: baseline;
-    border-radius: .25em;
+
+}
+
+#bug {
+    background-color: yellowgreen;
 }
 
 .type_box {

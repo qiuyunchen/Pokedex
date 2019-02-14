@@ -28,7 +28,7 @@ class App extends Component {
     const newList = SearchList.filter(n => n.toLowerCase().includes(searchStr));
     this.setState({dropdownList: newList});
   }
-  removeDropdown = (e) =>{
+  removeDropdown = () =>{
     this.setState({dropdownList: []});
   }
   clickPkmn = (e) =>{
@@ -74,20 +74,20 @@ class App extends Component {
   render() {
     const {dropdownList} = this.state;
     return (
-      <>
-      <Header filterDropdown={this.filterDropdown} dropdownList={dropdownList} clickHeader={this.removeDropdown} clickPkmn={this.clickPkmn} />
-        {
-          this.state.clickedPokemon ?
-            <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl} home={this.backHome}/>
-            :
-            <div className="container pokedex">
-              <List list={this.state.list} click={this.checkPokemon} />
-              <Load load={this.loadMore} />
-            </div>
-       }
-      </>
+      <div onClick={e => this.removeDropdown()}>
+        <Header filterDropdown={this.filterDropdown} dropdownList={dropdownList} clickPkmn={this.clickPkmn} />
+        {this.state.clickedPokemon ?
+          <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl} home={this.backHome}/>
+          :
+          <div className="container pokedex">
+            <List list={this.state.list} click={this.checkPokemon}/>
+            <Load load={this.loadMore} />
+          </div>
+        }
+      </div>
     );
   }
 }
 
 export default App;
+

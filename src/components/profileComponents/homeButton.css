@@ -1,3 +1,9 @@
 .pkmn-name {
     color: red;
 }
+.home-text {
+    color: grey;
+}
+.nav-row {
+    padding-left: 20px;
+}

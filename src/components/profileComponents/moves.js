@@ -1,4 +1,5 @@
 import React from 'react';
+import './moves.css'
 
 const Moves = (props) => {
     const {data} = props;
@@ -12,17 +13,19 @@ const Moves = (props) => {
     // console.log(arr)
     
     return (
-        <>
-        <div>MOVES</div>
-        {
-            arr.map((e, i) => {
-                // if (i = 3) return;
-                return(
-                    <span key={i}>{e.move.name} </span>
-                )
-            })
-        }
-        </>
+        <div className='move-wrap'>
+            <h1 className='move-title'>Moves</h1>
+            <div className='move-rows'>
+                {
+                    arr.map((e, i) => {
+                        // if (i = 3) return;
+                        return(
+                            <span className='each-move' key={i}>{e.move.name} </span>
+                        )
+                    })
+                }
+            </div>
+        </div>
     )
 }
 

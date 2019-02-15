@@ -2,16 +2,16 @@
     color: blue;
     padding: 10px;
     border: 1px solid grey;
-    border-radius: 9px;
-    margin-bottom: 8px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .pkmn:hover {
-    background-color: yellow;
     cursor: pointer;
+    background-color: lightyellow;
 }
-.pkmn-container {
-    margin: auto;
-    min-width: 300px;
-    max-width: 800px;
+.pkmn-list {
+    max-height: 600px;
+    padding: 25px 30px 25px 20px;
+    overflow: scroll;
 }

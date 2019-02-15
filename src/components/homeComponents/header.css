@@ -20,3 +20,12 @@ h1 {
 .pokeball {
     width: 125px;
 }
+.pokeball:hover {
+    cursor: pointer;
+}
+.head-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 1080px;
+    margin: auto;
+}

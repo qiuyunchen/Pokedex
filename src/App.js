@@ -6,7 +6,7 @@ import Profile from './containers/pokemonProfile';
 import Header from './components/homeComponents/header';
 import Axios from 'axios';
 import SearchList from './components/homeComponents/searchList';
-
+import './App.css';
 
 class App extends Component {
 
@@ -23,8 +23,8 @@ class App extends Component {
     }
   }
 
-  loadMore = () => {
-    Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.offset}&limit=20`)
+  loadMore = (num = 20) => {
+    Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.offset}&limit=${num}`)
       .then((data) => {
         let arr = []
         for (let i = 0; i < data.data.results.length; i++) {
@@ -96,7 +96,7 @@ class App extends Component {
     }
 
     if (index === null) {
-      alert('Pokemon not found!');
+      alert('Pokemon not found! Please check your spelling.');
       document.querySelector('.search_bar').value = null;
     } else {
       url = `https://pokeapi.co/api/v2/pokemon/${index + 1}/`;
@@ -134,6 +134,16 @@ class App extends Component {
       // window.location.reload()
     });
   }
+  resetToHome = (e) =>{
+    this.setState({
+      list: [],
+      offset: 0,
+      clickedPokemon: false,
+      pokemonClicked: null,
+      pokemonClickedUrl: null,
+      dropdownList: [],
+    }, ()=> this.loadMore(5));
+  }
 // <------------------------ Header Methods
 
   render() {
@@ -144,6 +154,7 @@ class App extends Component {
           filterDropdown={this.filterDropdown}
           searchPkmn={this.searchPkmn}
           clickPkmn={this.clickPkmn}
+          reset={this.resetToHome}
         />
         {
           !JSON.parse(localStorage.getItem('clickedPokemon'))

@@ -6,7 +6,7 @@ import Profile from './containers/pokemonProfile';
 import Header from './components/homeComponents/header';
 import Axios from 'axios';
 import SearchList from './components/homeComponents/searchList';
-
+import './App.css';
 
 class App extends Component {
 

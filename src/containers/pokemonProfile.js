@@ -16,19 +16,27 @@ class Profile extends Component {
             pokeData: null,
             home: props.home
             }
+            
+        this.forceRender = this.forceUpdate()    
     }
 
     componentDidMount() {
         Axios.get(this.state.url)
             .then((data) => {
                 this.setState({pokeData: data.data});
+                console.log(data.data)
             })
             .catch(err => {
                 console.log(err);
             })
     }
 
+    componentDidUpdate() {
+        console.log('updated')
+    }
+
     render() {
+
         return <div className='profile-wrap'>
             <Home name={this.state.name} data={this.state.pokeData} home={this.state.home}/> 
             <Images name={this.state.name} data={this.state.pokeData} />

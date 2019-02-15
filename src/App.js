@@ -106,6 +106,10 @@ class App extends Component {
         pokemonClickedUrl: url
       }, ()=>{
         console.log('on enter, the state becomes...', this.state);
+        localStorage.setItem('pokemon', this.state.pokemonClicked);
+        localStorage.setItem('pokemonClickedUrl', this.state.pokemonClickedUrl);
+        localStorage.setItem('clickedPokemon', true);
+        // window.location.reload()
       });
     }
   }
@@ -124,6 +128,10 @@ class App extends Component {
       pokemonClickedUrl: url
     }, ()=>{
       console.log('on click of suggestion', this.state)
+      localStorage.setItem('pokemon', this.state.pokemonClicked);
+      localStorage.setItem('pokemonClickedUrl', this.state.pokemonClickedUrl);
+      localStorage.setItem('clickedPokemon', true);
+      // window.location.reload()
     });
   }
 // <------------------------ Header Methods
@@ -147,9 +155,9 @@ class App extends Component {
                 <Load load={this.loadMore} />
               </div>
               :
-              <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl} home={this.backHome} />
+              <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl} home={this.backHome}/>
             :
-            <Profile name={localStorage.getItem('pokemon')} url={localStorage.getItem('pokemonClickedUrl')} home={this.backHome} />
+            <Profile name={localStorage.getItem('pokemon')} url={localStorage.getItem('pokemonClickedUrl')} home={this.backHome}/>
         }
       </div>
     );

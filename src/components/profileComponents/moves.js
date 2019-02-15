@@ -9,7 +9,7 @@ const Moves = (props) => {
     for (let i = 0; i < 3; i ++) {
         arr.push(data.moves[i]);
     }
-    console.log(arr)
+    // console.log(arr)
     
     return (
         <>

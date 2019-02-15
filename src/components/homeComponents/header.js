@@ -8,13 +8,14 @@ const Header = (props) =>{
         filterDropdown,
         searchPkmn,
         clickPkmn,
+        reset,
     } = props;
 
     return (
     <header className='header'>
         <div className='head-wrap'>
             <div>
-                <img className='pokeball' src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball' />
+                <img className='pokeball' onClick={e =>reset(e)} src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball' />
             </div>
             <div>
                 <h1>Pursuit Pokedex</h1>
@@ -26,7 +27,7 @@ const Header = (props) =>{
                 />
             </div>
             <div>
-                <img className='pokeball' src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball' />
+                <img className='pokeball' onClick={e =>reset(e)} src='https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG' alt='pokeball' />
             </div>
         </div>
     </header>

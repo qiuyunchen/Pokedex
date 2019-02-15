@@ -23,8 +23,8 @@ class App extends Component {
     }
   }
 
-  loadMore = () => {
-    Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.offset}&limit=20`)
+  loadMore = (num = 20) => {
+    Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.offset}&limit=${num}`)
       .then((data) => {
         let arr = []
         for (let i = 0; i < data.data.results.length; i++) {
@@ -126,6 +126,16 @@ class App extends Component {
       console.log('on click of suggestion', this.state)
     });
   }
+  resetToHome = (e) =>{
+    this.setState({
+      list: [],
+      offset: 0,
+      clickedPokemon: false,
+      pokemonClicked: null,
+      pokemonClickedUrl: null,
+      dropdownList: [],
+    }, ()=> this.loadMore(5));
+  }
 // <------------------------ Header Methods
 
   render() {
@@ -136,6 +146,7 @@ class App extends Component {
           filterDropdown={this.filterDropdown}
           searchPkmn={this.searchPkmn}
           clickPkmn={this.clickPkmn}
+          reset={this.resetToHome}
         />
         {
           !JSON.parse(localStorage.getItem('clickedPokemon'))

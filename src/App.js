@@ -15,45 +15,55 @@ class App extends Component {
 
     this.state = {
       list: [],
-    offset: 0,
-    clickedPokemon: false,
-    pokemonClicked : null,
-    pokemonClickedUrl: null,
-    dropdownList: [],
+      offset: 0,
+      clickedPokemon: false,
+      pokemonClicked: null,
+      pokemonClickedUrl: null,
+      dropdownList: [],
     }
   }
-  
+
   loadMore = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.offset}&limit=20`)
-    .then((data) => {
-      let arr = []
-      for (let i = 0; i < data.data.results.length; i++) {
-        arr.push(data.data.results[i]);
-      }
-      return arr;
-    })
-    .then((arr) => { 
-      this.setState({offset: this.state.offset + 20, list: this.state.list.concat(arr)}, () => {
-        console.log(this.state);
+      .then((data) => {
+        let arr = []
+        for (let i = 0; i < data.data.results.length; i++) {
+          arr.push(data.data.results[i]);
+        }
+        return arr;
       })
-    })
-    .catch(err => {
-      console.log(err)
-    })
+      .then((arr) => {
+        localStorage.setItem('list', JSON.stringify(this.state.list.concat(arr)));
+        localStorage.setItem('offset', this.state.offset + 20);
+        this.setState({ offset: this.state.offset + 20, list: this.state.list.concat(arr) }, () => {
+          console.log(this.state);
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   checkPokemon = (e) => {
-    this.setState({clickedPokemon: true, pokemonClicked: e.target.getAttribute('value'), pokemonClickedUrl: e.target.getAttribute('url')}, ()=> {
-      // console.log(this.state)
+    this.setState({ clickedPokemon: true, pokemonClicked: e.target.getAttribute('value'), pokemonClickedUrl: e.target.getAttribute('url') }, () => {
+      localStorage.setItem('pokemon', this.state.pokemonClicked);
+      localStorage.setItem('pokemonClickedUrl', this.state.pokemonClickedUrl);
+      localStorage.setItem('clickedPokemon', true);
     })
   }
 
   backHome = () => {
-    this.setState({clickedPokemon: false});
+    localStorage.setItem('pokemon', null);
+    localStorage.setItem('pokemonClickedUrl', null);
+    localStorage.setItem('clickedPokemon', false);
+    this.setState({ clickedPokemon: false }, () => {
+      console.log(this.state);
+    })
   }
 
   componentDidMount() {
-    this.loadMore();
+    if (!localStorage.getItem('list')) this.loadMore();
+    else this.setState({ offset: parseInt(localStorage.getItem('offset')), list: JSON.parse(localStorage.getItem('list')) })
   }
  
 // Header methods ----------------------->
@@ -128,22 +138,21 @@ class App extends Component {
           clickPkmn={this.clickPkmn}
         />
         {
-          this.state.clickedPokemon ?
-          <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl} home={this.backHome} />
-          :
-          <div className="container pokedex">
-            <List list={this.state.list} click={this.checkPokemon}/>
-            <Load load={this.loadMore} />
-          </div>
+          !JSON.parse(localStorage.getItem('clickedPokemon'))
+            ?
+            !this.state.clickedPokemon
+              ?
+              <div className="container pokedex">
+                <List list={this.state.list} click={this.checkPokemon} />
+                <Load load={this.loadMore} />
+              </div>
+              :
+              <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl} home={this.backHome} />
+            :
+            <Profile name={localStorage.getItem('pokemon')} url={localStorage.getItem('pokemonClickedUrl')} home={this.backHome} />
         }
       </div>
     );
-  }
-
-  componentDidUpdate = (prevProps, prevState) =>{
-    if (this.state.pokemonClicked !== prevState.pokemonClicked){
-      this.setState(this.state);
-    }
   }
 }
 

@@ -96,7 +96,7 @@ class App extends Component {
     }
 
     if (index === null) {
-      alert('Pokemon not found!');
+      alert('Pokemon not found! Please check your spelling.');
       document.querySelector('.search_bar').value = null;
     } else {
       url = `https://pokeapi.co/api/v2/pokemon/${index + 1}/`;

@@ -4,7 +4,9 @@
 .home-text {
     color: grey;
 }
-
+.arrow {
+    color: grey;
+}
 .home-text:hover {
     color: blue;
     cursor: pointer;

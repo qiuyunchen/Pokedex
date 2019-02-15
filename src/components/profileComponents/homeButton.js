@@ -8,7 +8,8 @@ const Home = (props) => {
     return (
 
         <div className='nav-row'>
-            <span className='home-text' onClick={home}> Home  >>  </span>
+            <span className='home-text' onClick={home}> Home </span>
+            <span className='arrow'> >> </span>
             <span className='pkmn-name'>{newName}</span>
 
         </div>

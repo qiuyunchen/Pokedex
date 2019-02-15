@@ -23,21 +23,6 @@ class App extends Component {
     }
   }
   
-  filterDropdown = (e) => {
-    const searchStr = e.target.value.trim().toLowerCase();
-    const newList = SearchList.filter(n => n.toLowerCase().includes(searchStr));
-    this.setState({dropdownList: newList});
-  }
-  removeDropdown = () =>{
-    this.setState({dropdownList: []});
-  }
-  clickPkmn = (e) =>{
-    this.setState({pokemonClicked: e.target.innerText}, ()=>{
-      console.log(this.state.pokemonClicked, 'was clicked!');
-    });
-  }
-
-
   loadMore = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.offset}&limit=20`)
     .then((data) => {
@@ -71,13 +56,80 @@ class App extends Component {
     this.loadMore();
   }
  
+// Header methods ----------------------->
+  filterDropdown = (e) => {
+    const searchStr = e.target.value.trim().toLowerCase();
+    let newList = [];
+    SearchList.forEach( (n, i) => {
+      if(n.toLowerCase().includes(searchStr)){
+        newList.push({name: n, i});
+      }
+    });
+    this.setState({dropdownList: newList});
+  }
+
+  removeDropdown = () =>{
+    this.setState({dropdownList: []});
+  }
+
+  searchPkmn = (e) =>{
+    const searchStr = e.target.value;
+    document.querySelector('.search_bar').value = null;
+
+    let index = null;
+    let url = null;
+    for(let i = 0; i < SearchList.length; i++){
+      if (SearchList[i].toLowerCase() === searchStr.toLowerCase()){
+        index = i;
+        i = SearchList.length;
+      }
+    }
+
+    if (index === null) {
+      alert('Pokemon not found!');
+      document.querySelector('.search_bar').value = null;
+    } else {
+      url = `https://pokeapi.co/api/v2/pokemon/${index + 1}/`;
+      this.setState({
+        clickedPokemon: true,
+        pokemonClicked: searchStr.toLowerCase(), 
+        pokemonClickedUrl: url
+      }, ()=>{
+        console.log('on enter, the state becomes...', this.state);
+      });
+    }
+  }
+
+  clickPkmn = (e) =>{
+    let name = e.target.innerText;
+    document.querySelector('.search_bar').value = name;
+      
+    const index = parseInt(e.target.id);
+    const url = `https://pokeapi.co/api/v2/pokemon/${index + 1}/`;
+
+    name = name.toLowerCase();
+    this.setState({
+      clickedPokemon: true, 
+      pokemonClicked: name, 
+      pokemonClickedUrl: url
+    }, ()=>{
+      console.log('on click of suggestion', this.state)
+    });
+  }
+// <------------------------ Header Methods
+
   render() {
-    const {dropdownList} = this.state;
     return (
       <div onClick={e => this.removeDropdown()}>
-        <Header filterDropdown={this.filterDropdown} dropdownList={dropdownList} clickPkmn={this.clickPkmn} />
-        {this.state.clickedPokemon ?
-          <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl} home={this.backHome}/>
+        <Header
+          dropdownList={this.state.dropdownList}
+          filterDropdown={this.filterDropdown}
+          searchPkmn={this.searchPkmn}
+          clickPkmn={this.clickPkmn}
+        />
+        {
+          this.state.clickedPokemon ?
+          <Profile name={this.state.pokemonClicked} url={this.state.pokemonClickedUrl} home={this.backHome} />
           :
           <div className="container pokedex">
             <List list={this.state.list} click={this.checkPokemon}/>
@@ -86,6 +138,12 @@ class App extends Component {
         }
       </div>
     );
+  }
+
+  componentDidUpdate = (prevProps, prevState) =>{
+    if (this.state.pokemonClicked !== prevState.pokemonClicked){
+      this.setState(this.state);
+    }
   }
 }
 

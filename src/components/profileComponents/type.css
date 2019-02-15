@@ -1,6 +1,9 @@
 .badge {
-    margin-right: 10px;
-
+    font-size: 20pt;
+    font-weight: 50;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 48%;
+    min-width: 60px;
 }
 
 #fire {
@@ -9,12 +12,10 @@
 
 #grass {
     background-color: green;
-  
 }
 
 #water {
     background-color: blue;
-
 }
 
 #flying {
@@ -27,12 +28,11 @@
 
 #electric {
     background-color: yellow;
-
+    color: grey;
 }
 
 #steel {
     background-color: darkslategrey;
-
 }
 
 #poison {
@@ -45,36 +45,30 @@
 
 #ground {
     background-color: brown;
-
 }
 
 #fairy {
     background-color: pink;
-
 }
 
 #dragon {
     background-color: orangered;
-
 }
 
 #fighting {
     background-color: lightcoral;
-
 }
 
 #normal {
     background-color: beige;
-
+    color: grey;
 }
 #dark {
     background-color: rgb(31, 3, 31);
-
 }
 
 #ice {
     background-color: rgb(123, 123, 250);
-
 }
 
 #bug {
@@ -83,15 +77,8 @@
 
 .type_box {
     display: flex;
+    justify-content: space-between;
     width: 100%;
-    justify-content: center;
     font-size: 20pt;
     margin-top: 25px;
-}
-#m {
-    margin-right: 10px;
-    width: 40%;
-}
-#n {
-    width: 40%;
 }

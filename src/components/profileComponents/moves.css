@@ -18,6 +18,9 @@
     padding: 8px;
     margin: 5px 20px 10px 0px;
 }
+.each-move:hover {
+    cursor: pointer;
+}
 .move-wrap {
     margin: 20px 0px;
 }

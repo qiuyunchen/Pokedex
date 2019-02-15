@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 .lg_img_box {
-    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,12 +29,11 @@
 .name_row {
     width: 100%;
     text-align: right;
-    padding-right: 100px;
+    padding-right: 50px;
     font-size: 20pt;
     font-weight: 700;
     letter-spacing: 5px;
 }
-
 .home:hover {
     cursor: pointer;
     color: blue;

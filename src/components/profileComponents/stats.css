@@ -22,4 +22,5 @@
 }
 .stat-wrap {
     margin: 10px 0px 30px;
+    min-width: 600px;
 }

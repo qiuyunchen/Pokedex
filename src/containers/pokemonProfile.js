@@ -32,7 +32,7 @@ class Profile extends Component {
     }
 
     componentDidUpdate() {
-        console.log('updated')
+        console.log('updated');
     }
 
     render() {

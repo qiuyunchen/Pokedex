@@ -21,6 +21,8 @@ const getMoveInfo = (e) =>{
             moveObj.type = data.data.type.name;
             moveObj.pp = data.data.pp;
             moveObj.power = data.data.power;
+        })
+        .then(()=>{
             openModal();
         })
         .catch(e => console.log('Error:', e.toString()));
@@ -28,9 +30,9 @@ const getMoveInfo = (e) =>{
 
 const modalContent = () =>{
     return <>
-        <h1>{moveObj.name}</h1>
+        <h1 className='modal-title'>{moveObj.name}</h1>
         <p>Type: {moveObj.type}</p>
-        <p>Power: {moveObj.power}</p>
+        <p>Power: {moveObj.power }</p>
         <p>PP: {moveObj.pp}</p>
         </>
 }
@@ -47,11 +49,13 @@ const Moves = (props) => {
                     data.moves.map((e, i) => {
                         return(
                             <>
-                            <span onClick={e => getMoveInfo(e)} id={i} className='each-move' key={i}>{e.move.name} </span>
+                            <span onClick={e => getMoveInfo(e)} className='each-move' key={i}>{e.move.name} </span>
 
-                                <div className='modal' id={'modal'+i}>
+                                <div className='modal modal-style'>
                                     <div className="modal-content">
-                                        <div className="close" onClick={e => closeModal(e) }> &times;</div>
+                                        <div className='close-box'>
+                                            <span className="close" onClick={e => closeModal(e) }> &times;</span>
+                                        </div>
                                         {modalContent()}
                                     </div>
                                 </div>

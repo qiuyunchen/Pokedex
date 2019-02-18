@@ -11,6 +11,8 @@
     font-size: 18pt;
     margin-top: 10px;
     flex-wrap: wrap;
+    max-height: 140px;
+    overflow: scroll;
 }
 .each-move {
     border: 1px solid grey;
@@ -20,6 +22,7 @@
 }
 .each-move:hover {
     cursor: pointer;
+    background-color: lightskyblue;
 }
 .move-wrap {
     margin: 20px 0px;
@@ -38,14 +41,26 @@
   }
   .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 50% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%;
   }
   .close {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+  }
+  .close-box {
+    text-align: right;
+  }
+  .modal-style {
+    text-align: center;
+    font: 20pt;
+    font-weight: 800;
+  }
+  .modal-title {
+      color: black;
+      text-transform: uppercase;
+      font-size: 20pt;
   }

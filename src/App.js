@@ -142,7 +142,7 @@ class App extends Component {
       pokemonClicked: null,
       pokemonClickedUrl: null,
       dropdownList: [],
-    }, ()=> this.loadMore(5));
+    }, ()=> this.loadMore(20));
   }
 // <------------------------ Header Methods
 

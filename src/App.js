@@ -109,7 +109,7 @@ class App extends Component {
         localStorage.setItem('pokemon', this.state.pokemonClicked);
         localStorage.setItem('pokemonClickedUrl', this.state.pokemonClickedUrl);
         localStorage.setItem('clickedPokemon', true);
-        // window.location.reload()
+        window.location.reload()
       });
     }
   }
@@ -131,7 +131,7 @@ class App extends Component {
       localStorage.setItem('pokemon', this.state.pokemonClicked);
       localStorage.setItem('pokemonClickedUrl', this.state.pokemonClickedUrl);
       localStorage.setItem('clickedPokemon', true);
-      // window.location.reload()
+      window.location.reload()
     });
   }
   resetToHome = (e) =>{
@@ -142,7 +142,7 @@ class App extends Component {
       pokemonClicked: null,
       pokemonClickedUrl: null,
       dropdownList: [],
-    }, ()=> this.loadMore(5));
+    }, ()=> this.loadMore(20));
   }
 // <------------------------ Header Methods
 
